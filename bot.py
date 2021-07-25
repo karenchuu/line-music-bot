@@ -49,5 +49,5 @@ def add_spotify_playlist(event):
             TextSendMessage(text=f"已經成功新增{event.message.text} 這個禮拜的 Billboard Hot 100 進 Spotify。")
         )
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
