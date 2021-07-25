@@ -17,15 +17,15 @@ SCOPE = "playlist-modify-private"
 REDIRECT_URL = "http://example.com"
 
 # number of years to go back, make sure there was a Billboard chart published
-while True:
-    YEARS_AGO = int(input("你想建立幾年前的 Billboard Hot 100 進 Spotify Album？(ex.20) "))
-    if YEARS_AGO > 0:
-        break
-
-# calculate the date in the past
-today = dt.datetime.now().strftime("%Y-%m-%d").split("-")
-past_year = int(today[0]) - YEARS_AGO
-past_date = f"{past_year}-{today[1]}-{today[2]}"
+# while True:
+#     YEARS_AGO = int(input("你想建立幾年前的 Billboard Hot 100 進 Spotify Album？(ex.20) "))
+#     if YEARS_AGO > 0:
+#         break
+#
+# # calculate the date in the past
+# today = dt.datetime.now().strftime("%Y-%m-%d").split("-")
+# past_year = int(today[0]) - YEARS_AGO
+# past_date = f"{past_year}-{today[1]}-{today[2]}"
 
 def add_hot100_in_spotify_playlists(date):
 
@@ -54,7 +54,7 @@ def add_hot100_in_spotify_playlists(date):
         song_uris = []
         for i in range(100):
             # print(f"#{i + 1}: {song_list[i]} by {artist_list[i]}")
-            result = sp.search(q=f"track:{song_list[i]} year:{past_year}", type="track")
+            result = sp.search(q=f"track:{song_list[i]} year:{date[:4]}", type="track")
             try:
                 uri = result["tracks"]["items"][0]["uri"]
             except IndexError:
