@@ -11,8 +11,8 @@ load_dotenv()
 BILLBOARD_URL = "https://www.billboard.com/charts/hot-100/"
 
 # the scope required by the Spotify API, to allow the creation and modification of playlists
-SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-SPOTIFY_SECRET = os.getenv('SPOTIFY_SECRET')
+SPOTIFY_CLIENT_ID = os.environ['SPOTIFY_CLIENT_ID']
+SPOTIFY_SECRET = os.environ['SPOTIFY_SECRET']
 SCOPE = "playlist-modify-private"
 REDIRECT_URL = "http://example.com"
 
